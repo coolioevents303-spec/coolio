@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coolío · Afrobeats de tarde en Mataró y Barcelona</title>
+  <meta name="description" content="Coolío: evento multicultural de afrobeat, amapiano, afrohouse, dancehall, hip-hop y R&B. Your tribe, our tribe.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="cabecera" id="cabecera">
+    <nav class="nav contenedor" aria-label="Principal">
+      <a href="#inicio" class="nav__logo" aria-label="Coolío, inicio"><img src="img/logo-blanco.svg" alt="Coolío"></a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-enlaces">
+        <span class="visualmente-oculto">Abrir menú</span>
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="nav__enlaces" id="nav-enlaces">
+        <a href="#eventos">Eventos</a>
+        <a href="#fotos">Fotos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#eventos" class="boton boton--pequeno">Próximo evento</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img class="hero__foto" src="img/foto-terraza.jpg" alt="Pista llena en una tarde de Coolío al aire libre">
+      <div class="hero__velo"></div>
+      <div class="hero__contenido contenedor">
+        <p class="antetitulo">Afrobeats · Tardeo · Mataró &amp; Barcelona</p>
+        <h1 class="hero__titulo">Your tribe,<br>our tribe</h1>
+        <p class="hero__texto">Un “lío” organizado donde la cultura urbana se encuentra con la tradición africana. Afrobeat, amapiano, afrohouse, dancehall, hip-hop y R&amp;B, de tarde y sin prejuicios.</p>
+        <div class="hero__acciones">
+          <a href="#eventos" class="boton">Ver calendario
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="chip" id="proximo-chip" hidden></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cinta" aria-hidden="true">
+      <div class="cinta__pista">
+        <span>Afrobeat ✦ Amapiano ✦ Afrohouse ✦ Dancehall ✦ Hip-hop ✦ R&amp;B ✦ Funky ✦&nbsp;</span>
+        <span>Afrobeat ✦ Amapiano ✦ Afrohouse ✦ Dancehall ✦ Hip-hop ✦ R&amp;B ✦ Funky ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <section class="seccion contenedor" id="eventos">
+      <div class="seccion__cabeza">
+        <div>
+          <p class="antetitulo">Calendario</p>
+          <h2 class="titulo">Próximos eventos</h2>
+        </div>
+        <p class="seccion__intro">Cada edición en una sala distinta de Mataró o Barcelona. Síguenos para enterarte antes que nadie.</p>
+      </div>
+      <div class="eventos" id="lista-eventos" aria-live="polite">
+        <p class="estado">Cargando fechas…</p>
+      </div>
+    </section>
+
+    <section class="seccion contenedor" id="fotos">
+      <div class="seccion__cabeza">
+        <div>
+          <p class="antetitulo">Galería</p>
+          <h2 class="titulo">Así se vive</h2>
+        </div>
+        <a class="enlace-fuerte" href="#" data-enlace="instagram">Más fotos en Instagram →</a>
+      </div>
+      <div class="galeria">
+        <img src="img/foto-cabina.jpg" alt="Cabina con el neón de Coolío y el público levantando carteles" loading="lazy">
+        <img src="img/foto-mc.jpg" alt="MC con micrófono animando la pista" loading="lazy">
+        <img src="img/foto-neon.jpg" alt="Público bailando bajo el neón verde" loading="lazy">
+        <img src="img/foto-terraza.jpg" alt="Vista aérea de la pista al aire libre" loading="lazy">
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="contenedor nosotros__dentro">
+        <div class="nosotros__intro">
+          <div>
+            <p class="antetitulo">Nosotros</p>
+            <h2 class="titulo">Más que una fiesta</h2>
+          </div>
+          <div class="nosotros__texto">
+            <p>“Cool-Lío” es un evento vibrante y multicultural que combina la frescura de los ritmos modernos con la energía de una fiesta épica: una invitación a soltarse, conectar y disfrutar de música, baile, diversidad… y outfits.</p>
+            <p>La pista y el set de DJ son el corazón del caos. Aquí cada asistente es protagonista y cada beat cuenta una historia de libertad y celebración. En Coolío la gente es libre de prejuicios y discriminaciones.</p>
+          </div>
+        </div>
+        <div class="equipo" id="lista-equipo" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__dentro">
+      <img src="img/logo-blanco.svg" alt="Coolío" class="pie__logo">
+      <div class="pie__enlaces">
+        <span>Mataró · Barcelona</span>
+        <a href="#" data-enlace="instagram">Instagram</a>
+        <a href="#" data-enlace="email">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/datos-ejemplo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
