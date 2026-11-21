@@ -143,6 +143,16 @@
 
   // ---------- Equipo ----------
 
+  // "DJola" -> "djola.jpg", "Foto Omaima.JPG" -> "foto-omaima.jpg"
+  // Los archivos de img/equipo/ se guardan siempre en minúsculas y sin tildes.
+  function nombreFoto(s) {
+    var n = s.trim().toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/\s+/g, '-').replace(/[^a-z0-9.\-_]/g, '');
+    if (!/\.(jpe?g|png|webp)$/.test(n)) n += '.jpg';
+    return n;
+  }
+
   function pintarEquipo(filas) {
     var lista = document.getElementById('lista-equipo');
     lista.textContent = '';
@@ -152,7 +162,7 @@
 
       var marco = el('div', 'miembro__foto');
       var img = document.createElement('img');
-      var foto = m.foto && (urlSegura(m.foto) || 'img/equipo/' + m.foto.replace(/[^\w.\-]/g, ''));
+      var foto = m.foto && (urlSegura(m.foto) || 'img/equipo/' + nombreFoto(m.foto));
       if (foto) {
         img.src = foto; img.alt = 'Foto de ' + m.nombre; img.loading = 'lazy';
         img.onerror = function () { img.src = 'img/isotipo-blanco.svg'; img.alt = ''; img.className = 'miembro__isotipo'; };

@@ -122,7 +122,7 @@ a:hover { color: #C4F2D1; }
 .equipo { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .miembro { background: var(--fondo); border: 1px solid var(--linea); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; }
 .miembro__foto { height: 300px; background: var(--verde); display: flex; align-items: center; justify-content: center; }
-.miembro__foto img { width: 100%; height: 100%; object-fit: cover; }
+.miembro__foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; } /* retratos: prioriza la cara */
 .miembro__foto img.miembro__isotipo { width: auto; height: 120px; object-fit: contain; opacity: .5; }
 .miembro__cuerpo { padding: 24px; display: flex; flex-direction: column; gap: 6px; }
 .miembro__rol { margin: 0; color: var(--menta); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }

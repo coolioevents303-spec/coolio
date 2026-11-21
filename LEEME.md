@@ -41,7 +41,7 @@ Las fechas pasadas desaparecen solas. No hace falta borrarlas, así os queda un 
 **Equipo**, una fila por persona y en el orden en que queréis que salgan:
 - `instagram`: solo el usuario, sin @.
 - `foto`: la foto debe ser cuadrada o vertical. Hay dos maneras:
-  - Guardarla en la carpeta `img/equipo/` y escribir el nombre del archivo, por ejemplo `jerreh.jpg`.
+  - Guardarla en la carpeta `img/equipo/` con un nombre en minúsculas, sin tildes ni espacios (por ejemplo `djola.jpg`), y escribir ese nombre en la hoja. Se puede escribir sin `.jpg` y con mayúsculas: `DJola` también encuentra `djola.jpg`.
   - Escribir un enlace directo a la imagen que empiece por https://.
 
   Si la casilla está vacía, sale el isotipo de Coolío.
