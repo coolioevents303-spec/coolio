@@ -48,13 +48,18 @@ Las fechas pasadas desaparecen solas. No hace falta borrarlas, así os queda un 
 
 Google tarda **unos 5 minutos** en actualizar el CSV publicado después de cada cambio.
 
-## 4. Ponerla en internet
+## 4. Dónde está publicada
 
-La web son archivos estáticos, así que podéis alojarla gratis:
-- **Netlify Drop** ([app.netlify.com/drop](https://app.netlify.com/drop)): arrastráis la carpeta `web` y os da una dirección. Después podéis conectar un dominio propio, como coolio.es.
-- **GitHub Pages** o **Cloudflare Pages** también sirven.
+La web está publicada con **GitHub Pages** desde este repositorio:
+**https://coolioevents303-spec.github.io/coolio/**
 
-Los eventos y el equipo vienen de la hoja, así que no hay que volver a subir la web para cambiarlos. Solo hay que volver a subirla si cambiáis textos, fotos de la galería o el diseño.
+Cada cambio que se sube a la rama `main` se publica solo en 1 o 2 minutos. Podéis ver el progreso en la pestaña **Actions** del repositorio.
+
+Los eventos y el equipo vienen de la hoja, así que para cambiarlos no hay que tocar GitHub. Solo hay que tocar el repositorio para cambiar textos, fotos de la galería o el diseño:
+- **Editar un archivo:** ábrelo en GitHub, pulsa el lápiz ✏️ y luego **Commit changes**.
+- **Subir o cambiar fotos:** entra en la carpeta, **Add file → Upload files**. Si subís una foto con el mismo nombre que otra, la sustituye.
+
+Si algún día queréis un dominio propio (por ejemplo coolio.es), se configura en *Settings → Pages → Custom domain*.
 
 ## Archivos
 
@@ -65,6 +70,8 @@ web/
 ├── js/config.js       ← enlaces de la hoja, Instagram, email
 ├── js/app.js          lee la hoja y pinta eventos y equipo
 ├── js/datos-ejemplo.js datos que se ven mientras config.js esté vacío
-├── img/               logos y fotos (las de la galería, sacadas de vuestros vídeos)
-└── plantillas/        CSVs para importar en Google Sheets
+├── img/               logos, portada y fotos de la galería
+├── img/equipo/        fotos de los integrantes
+├── plantillas/        CSVs para importar en Google Sheets
+└── AGENTS.md          contexto del proyecto para asistentes de IA (CLAUDE.md apunta a él)
 ```
