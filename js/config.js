@@ -15,6 +15,6 @@ window.COOLIO_CONFIG = {
   equipoCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfpuAvTfO851ERUvuBlmc7P7iTX7Y0Gu6AMb2aW7iYW1oaO2Inh04TAFTf1hG2yttuL2ZDtxWJihx1/pub?gid=2029007177&single=true&output=csv",
 
   // Redes y contacto
-  instagram: "https://www.instagram.com/",   // cambiad por vuestro perfil
+  instagram: "https://www.instagram.com/coolio.tribe/",
   email: "",                                 // p. ej. "hola@coolio.es"
 };
