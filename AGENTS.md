@@ -43,7 +43,7 @@ Los **eventos** y el **equipo** NO están en el código. Vienen de una hoja de G
 | `entradas` | URL `https://…` | vacío → botón desactivado "Muy pronto" |
 | `nota` | texto corto opcional | se muestra como etiqueta verde (p. ej. "Sold out") |
 
-**Pestaña Equipo**, columnas: `nombre`, `rol`, `bio`, `instagram` (usuario sin @, o URL del perfil), `foto` (nombre de archivo dentro de `img/equipo/`, o URL `https://` directa a una imagen; vacío o error → isotipo de Coolío). `nombreFoto()` normaliza lo escrito en la hoja: minúsculas, sin tildes, espacios → `-` y añade `.jpg` si no hay extensión (`DJola` → `img/equipo/djola.jpg`). Por eso los archivos de `img/equipo/` se guardan siempre en minúsculas, sin tildes ni espacios.
+**Pestaña Equipo**, columnas: `nombre`, `rol`, `bio`, `instagram` (usuario, @usuario o cualquier URL del perfil, incluidas las de "compartir" con `?utm_source=…`; `usuarioInstagram()` extrae el usuario y la ficha muestra solo un icono de Instagram con `aria-label`), `foto` (nombre de archivo dentro de `img/equipo/`, o URL `https://` directa a una imagen; vacío o error → isotipo de Coolío). `nombreFoto()` normaliza lo escrito en la hoja: minúsculas, sin tildes, espacios → `-` y añade `.jpg` si no hay extensión (`DJola` → `img/equipo/djola.jpg`). Por eso los archivos de `img/equipo/` se guardan siempre en minúsculas, sin tildes ni espacios.
 
 Detalles de `js/app.js` que hay que respetar:
 - Las cabeceras se normalizan (minúsculas, sin tildes, espacios → `_`), así que "Hora inicio" equivale a `hora_inicio`. Si añades columnas, documéntalas aquí, en `LEEME.md` y en `plantillas/`.

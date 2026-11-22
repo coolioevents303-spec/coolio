@@ -128,7 +128,14 @@ a:hover { color: #C4F2D1; }
 .miembro__rol { margin: 0; color: var(--menta); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
 .miembro__nombre { margin: 0; font-size: 24px; }
 .miembro__bio { margin: 0; color: var(--apagado); font-size: 15px; }
-.miembro__ig { font-weight: 700; font-size: 15px; margin-top: 6px; }
+.miembro__ig {
+  align-self: flex-start; margin-top: 10px;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--linea); color: var(--menta);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.miembro__ig:hover { background: var(--verde); border-color: var(--verde); color: #fff; }
 
 /* ---------- Pie ---------- */
 .pie { border-top: 1px solid #1E2A21; }

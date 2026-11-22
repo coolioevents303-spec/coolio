@@ -143,6 +143,32 @@
 
   // ---------- Equipo ----------
 
+  // Acepta "usuario", "@usuario" o cualquier URL de perfil, también las de
+  // "compartir" con ?utm_source=… al final. Devuelve solo el usuario.
+  function usuarioInstagram(s) {
+    if (!s) return '';
+    var m = s.match(/instagram\.com\/([A-Za-z0-9._]+)/i) || s.trim().match(/^@?([A-Za-z0-9._]+)$/);
+    return m ? m[1] : '';
+  }
+
+  function iconoInstagram() {
+    var ns = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('width', '22'); svg.setAttribute('height', '22');
+    svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2'); svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+    [['rect', { x: 3, y: 3, width: 18, height: 18, rx: 5 }],
+     ['circle', { cx: 12, cy: 12, r: 4 }],
+     ['circle', { cx: 17.5, cy: 6.5, r: 0.6, fill: 'currentColor' }]].forEach(function (p) {
+      var n = document.createElementNS(ns, p[0]);
+      Object.keys(p[1]).forEach(function (k) { n.setAttribute(k, p[1][k]); });
+      svg.appendChild(n);
+    });
+    return svg;
+  }
+
   // "DJola" -> "djola.jpg", "Foto Omaima.JPG" -> "foto-omaima.jpg"
   // Los archivos de img/equipo/ se guardan siempre en minúsculas y sin tildes.
   function nombreFoto(s) {
@@ -175,11 +201,14 @@
       if (m.rol) cuerpo.appendChild(el('p', 'miembro__rol', m.rol));
       cuerpo.appendChild(el('h3', 'miembro__nombre', m.nombre));
       if (m.bio) cuerpo.appendChild(el('p', 'miembro__bio', m.bio));
-      if (m.instagram) {
-        var usuario = m.instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/[@\/]/g, '');
-        var a = el('a', 'miembro__ig', '@' + usuario);
-        a.href = 'https://www.instagram.com/' + encodeURIComponent(usuario) + '/';
+      var usuario = usuarioInstagram(m.instagram);
+      if (usuario) {
+        var a = el('a', 'miembro__ig');
+        a.href = 'https://www.instagram.com/' + usuario + '/';
         a.target = '_blank'; a.rel = 'noopener';
+        a.setAttribute('aria-label', 'Instagram de ' + m.nombre + ' (@' + usuario + ')');
+        a.title = '@' + usuario;
+        a.appendChild(iconoInstagram());
         cuerpo.appendChild(a);
       }
 
